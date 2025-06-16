@@ -1,0 +1,450 @@
+. One ONE, [6/16/2025 4:34 PM]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub - Download Top Mobile Games</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --accent: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        
+        .language-switcher a {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+            font-size: 0.9rem;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+        
+        .language-switcher a.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .language-switcher a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+        
+        .game-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .game-image-container {
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .game-image-placeholder {
+            font-size: 1rem;
+            color: #777;
+        }
+        
+        .game-content {
+            padding: 25px;
+        }
+        
+        .game-title {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .game-description {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .game-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .download-count, .rating {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .download-count {
+            color: var(--primary);
+        }
+        
+        .rating {
+            color: #f39c12;
+        }
+        
+        .stars {
+            color: #f39c12;
+
+. One ONE, [6/16/2025 4:34 PM]
+margin-right: 5px;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+        
+        .btn-download {
+            display: block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            font-size: 1.1rem;
+            margin-top: 15px;
+        }
+        
+        .btn-download:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+        }
+        
+        .reviews {
+            margin-top: 25px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        
+        .review {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .review:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .review-author {
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        
+        .review-text {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+            line-height: 1.5;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .games-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .language-switcher {
+                position: static;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="language-switcher">
+            <a href="#" class="active">English</a>
+            <a href="#">Español</a>
+        </div>
+        <div class="container">
+            <h1 class="logo">GameHub</h1>
+            <p class="tagline">Play the best mobile games for free!</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="games-container">
+            <!-- Monopoly Go Card -->
+            <div class="game-card" data-game="monopoly">
+                <div class="game-image-container">
+                    <div class="game-image-placeholder">Monopoly Go Image</div>
+                </div>
+                <div class="game-content">
+                    <h2 class="game-title">Monopoly Go</h2>
+                    <p class="game-description">
+                        Experience the classic board game with a modern twist! Build your empire, 
+                        collect properties, and compete with players worldwide in this exciting multiplayer game.
+                    </p>
+                    
+                    <div class="game-meta">
+                        <div class="download-count">📥 1.2M+ Downloads</div>
+                        <div class="rating">
+                            <span class="stars">★★★★☆</span>
+
+. One ONE, [6/16/2025 4:34 PM]
+<span>4.2</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-download" onclick="redirectToOffer('monopoly')">Download Now</button>
+                    
+                    <div class="reviews">
+                        <div class="review">
+                            <div class="review-author">Alex Johnson</div>
+                            <p class="review-text">
+                                Best mobile version of Monopoly! The online multiplayer is super fun.
+                            </p>
+                        </div>
+                        <div class="review">
+                            <div class="review-author">Sarah M.</div>
+                            <p class="review-text">
+                                Addictive gameplay with great graphics. Highly recommended!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Baseball 9 Card -->
+            <div class="game-card" data-game="baseball">
+                <div class="game-image-container">
+                    <div class="game-image-placeholder">Baseball 9 Image</div>
+                </div>
+                <div class="game-content">
+                    <h2 class="game-title">Baseball 9</h2>
+                    <p class="game-description">
+                        Step up to the plate in this thrilling baseball simulator! Build your dream team, 
+                        master realistic pitching and batting, and climb the ranks to become a champion.
+                    </p>
+                    
+                    <div class="game-meta">
+                        <div class="download-count">📥 850K+ Downloads</div>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-download" onclick="redirectToOffer('baseball')">Download Now</button>
+                    
+                    <div class="reviews">
+                        <div class="review">
+                            <div class="review-author">Mike Rodriguez</div>
+                            <p class="review-text">
+                                The most realistic baseball game on mobile. Player customization is amazing!
+                            </p>
+                        </div>
+                        <div class="review">
+                            <div class="review-author">Emily Chen</div>
+                            <p class="review-text">
+                                Perfect for baseball fans. The controls are intuitive and gameplay is smooth.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+            <p class="copyright">© 2023 GameHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Detect device type
+        function isIOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        }
+        
+        function isAndroid() {
+            return /Android/.test(navigator.userAgent);
+        }
+        
+        // Game download URLs
+        const gameUrls = {
+
+. One ONE, [6/16/2025 4:34 PM]
+monopoly: {
+                android: "https://monopoly.en.download.it/android",
+                ios: "https://monopoly-marmalade.en.softonic.com/android?ex=RAMP-3252.3"
+            },
+            baseball: {
+                android: "https://baseball-9.en.uptodown.com/android",
+                ios: "https://apps.apple.com/us/app/baseball-9/id1340866223"
+            }
+        };
+        
+        // CPA offer URLs
+        const cpaOffers = {
+            ios: "https://singingfiles.com/show.php?l=0&u=2381647&id=68777",
+            android: "https://singingfiles.com/show.php?l=0&u=2381647&id=68776"
+        };
+        
+        // Redirect to CPA offer then to game
+        function redirectToOffer(game) {
+            let deviceType;
+            
+            if (isIOS()) {
+                deviceType = 'ios';
+            } else if (isAndroid()) {
+                deviceType = 'android';
+            } else {
+                // Default to Android if device not detected
+                deviceType = 'android';
+            }
+            
+            // First redirect to CPA offer
+            const offerUrl = cpaOffers[deviceType];
+            
+            // Then redirect to game after CPA completion
+            const gameUrl = gameUrls[game][deviceType];
+            
+            // In a real scenario, you would track CPA completion first
+            // For this demo, we'll simulate with a timeout
+            window.location.href = offerUrl;
+            
+            // Note: In production, the CPA network would handle the final redirect
+            // after the user completes the offer. This is just for demonstration.
+        }
+        
+        // Track fake download counts (for demo purposes)
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadButtons = document.querySelectorAll('.btn-download');
+            
+            downloadButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const card = this.closest('.game-card');
+                    const downloadCountElement = card.querySelector('.download-count');
+                    
+                    // Get current count and increment
+                    let currentCount = downloadCountElement.textContent.match(/(\d+\.?\d*)/)[0];
+                    currentCount = parseFloat(currentCount);
+                    const increment = Math.floor(Math.random() * 100) + 50;
+                    const newCount = (currentCount + (increment / 1000)).toFixed(1);
+                    
+                    // Update display
+                    if (newCount >= 1.0) {
+                        downloadCountElement.textContent = 📥 ${newCount}M+ Downloads;
+                    } else {
+                        downloadCountElement.textContent = 📥 ${(newCount * 1000)}K+ Downloads;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
